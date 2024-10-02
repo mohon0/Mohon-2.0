@@ -40,8 +40,8 @@ export default function Hero() {
       {!isLoading && (
         <>
           <Header />
-          <div className="container mx-auto">
-            <section className="grid grid-cols-1 items-center gap-10 px-4 py-4 md:mt-10 md:grid-cols-2 md:px-10">
+          <div className="mx-auto mb-10 md:mb-16 md:mt-10">
+            <section className="grid grid-cols-1 items-center gap-10 px-4 py-4 md:grid-cols-2 md:px-10">
               {/* Text Section */}
               <motion.article
                 initial={{ opacity: 0, x: -100 }}
@@ -92,7 +92,7 @@ export default function Hero() {
                         key={href}
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
-                        className="bg-light-gradient dark:bg-dark-gradient shadow-custom-light dark:shadow-custom-dark flex h-12 w-12 items-center justify-center rounded text-muted-foreground hover:border md:h-16 md:w-16"
+                        className="flex h-12 w-12 items-center justify-center rounded bg-light-gradient text-muted-foreground shadow-custom-light hover:border dark:bg-dark-gradient dark:shadow-custom-dark md:h-16 md:w-16"
                       >
                         <Link
                           href={href}
@@ -113,10 +113,10 @@ export default function Hero() {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, delay: 0.5, ease: "easeInOut" }}
-                className="relative order-1 mt-10 flex justify-center md:order-2 md:mt-0"
+                className="relative order-1 flex justify-center md:order-2 md:mt-0"
               >
                 <motion.div
-                  className="bg-light-gradient shadow-custom-light dark:bg-dark-gradient dark:shadow-custom-dark absolute bottom-0 z-0 h-64 w-64 md:h-[27rem] md:w-[26rem]"
+                  className="absolute bottom-0 z-0 h-64 w-64 bg-light-gradient shadow-custom-light dark:bg-dark-gradient dark:shadow-custom-dark md:h-[27rem] md:w-[26rem]"
                   initial={{ opacity: 0, y: 50 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 1 }}
@@ -125,7 +125,6 @@ export default function Hero() {
                   src={img}
                   alt="Sejar Parvez, a Full Stack Developer"
                   className="z-10 w-60 md:w-96"
-                  sizes="(max-width: 768px) 100vw, 50vw"
                   priority
                 />
               </motion.div>
