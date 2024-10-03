@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { IconType } from "react-icons/lib";
 import { ServicesData } from "./ServicesData";
 
@@ -11,32 +11,30 @@ interface Props {
 }
 
 const FeatureModel = ({ data }: { data: Props }) => {
-  const IconComponent = data.icon;
+  const { title, description, icon: IconComponent } = data;
   const [isInView, setIsInView] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
   // Intersection Observer setup
   useEffect(() => {
+    const currentRef = ref.current;
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setIsInView(true);
-            observer.unobserve(entry.target);
+            if (currentRef) observer.unobserve(currentRef); // Unobserve using stable ref value
           }
         });
       },
       { threshold: 0.1 }, // Trigger when 10% of the component is in view
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
+    if (currentRef) observer.observe(currentRef);
 
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
-      }
+      if (currentRef) observer.disconnect(); // Cleanup using stable ref value
     };
   }, []);
 
@@ -50,6 +48,9 @@ const FeatureModel = ({ data }: { data: Props }) => {
     hover: { scale: 1.2, rotate: 15 }, // Scale up and rotate on hover
   };
 
+  // Memoize IconComponent to prevent unnecessary re-renders
+  const MemoizedIcon = useMemo(() => IconComponent, [IconComponent]);
+
   return (
     <motion.article
       ref={ref}
@@ -59,23 +60,23 @@ const FeatureModel = ({ data }: { data: Props }) => {
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
       <motion.div
-        className="rounded-md bg-light-gradient p-5 shadow-custom-light transition-all duration-300 dark:bg-dark-gradient dark:shadow-custom-dark md:p-12"
+        className="flex h-full flex-col rounded-md bg-light-gradient p-5 shadow-custom-light transition-all duration-300 dark:bg-dark-gradient dark:shadow-custom-dark md:p-12"
         whileHover="hover"
         initial="rest"
         animate="rest"
       >
-        <div className="flex flex-col gap-10">
+        <div className="flex h-full flex-col gap-10">
           <motion.div
             className="text-primary"
             variants={iconVariants}
             transition={{ type: "spring", stiffness: 400, damping: 10 }}
           >
-            <IconComponent size={50} />
+            <MemoizedIcon size={50} />
           </motion.div>
 
-          <div className="flex flex-col gap-6">
-            <p className="text-2xl font-bold">{data.title}</p>
-            <p className="text-muted-foreground">{data.description}</p>
+          <div className="flex flex-grow flex-col gap-6">
+            <p className="text-2xl font-bold">{title}</p>
+            <p className="text-muted-foreground">{description}</p>
           </div>
         </div>
       </motion.div>
@@ -100,7 +101,7 @@ export default function Services() {
         animate="visible"
       >
         <div className="flex flex-col items-center justify-center">
-          <p className="my-4 text-4xl text-center font-bold lg:text-5xl">
+          <p className="my-4 text-center text-4xl font-bold lg:text-5xl">
             Services & Our Course
           </p>
         </div>

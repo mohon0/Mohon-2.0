@@ -92,13 +92,14 @@ export default function Hero() {
                         key={href}
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
-                        className="flex h-12 w-12 items-center justify-center rounded bg-light-gradient text-muted-foreground shadow-custom-light hover:border dark:bg-dark-gradient dark:shadow-custom-dark md:h-16 md:w-16"
+                        className="flex h-12 w-12 items-center justify-center rounded bg-light-gradient text-muted-foreground shadow-custom-light hover:text-primary dark:bg-dark-gradient dark:shadow-custom-dark md:h-16 md:w-16"
                       >
                         <Link
                           href={href}
                           aria-label={label}
                           target="_blank"
                           rel="noopener noreferrer"
+                          className="flex h-full w-full items-center justify-center"
                         >
                           {icon}
                         </Link>
