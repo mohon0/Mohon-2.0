@@ -6,7 +6,7 @@ import { ModeToggle } from "./ModeToggle";
 
 export default function Header() {
   return (
-    <header className="container mx-auto border-b border-muted-foreground">
+    <header className="border-b border-muted-foreground">
       <div className="flex items-center justify-between px-4 py-4 md:px-10">
         {/* Logo */}
         <div className="text-2xl font-extrabold">Mohon</div>
