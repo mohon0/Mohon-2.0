@@ -33,7 +33,7 @@ export default function Contact() {
 
           <section className="mt-12 space-y-3 md:mt-16">
             <p className="text-muted-foreground">Connect With Me</p>
-            <div className="flex gap-5 md:gap-10">
+            <div className="flex gap-5">
               {[
                 {
                   href: "https://www.facebook.com/sejarparvez",

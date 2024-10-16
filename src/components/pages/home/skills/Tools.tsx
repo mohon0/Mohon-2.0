@@ -25,7 +25,7 @@ export default function Tools() {
   return (
     <div className="flex h-fit flex-wrap items-center justify-center gap-16">
       {tools.map(({ img, name }, index) => (
-        <div key={index} className="h-16 w-16 md:h-32 md:w-32">
+        <div key={index} className="h-20 w-20 md:h-32 md:w-32">
           <TooltipProvider delayDuration={100}>
             <Tooltip>
               <TooltipTrigger asChild>

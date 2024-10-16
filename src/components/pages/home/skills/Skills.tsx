@@ -23,7 +23,7 @@ export default function Skills() {
       {/* Tailwind */}
       <div className="flex w-full flex-col gap-2">
         <div className="flex justify-between">
-          <p>Tailwind CSS</p>
+          <p>Graphics Design</p>
           <p>90%</p>
         </div>
         <motion.div
@@ -43,7 +43,7 @@ export default function Skills() {
       {/* JavaScript */}
       <div className="flex w-full flex-col gap-2">
         <div className="flex justify-between">
-          <p>JavaScript</p>
+          <p>Web Design</p>
           <p>89%</p>
         </div>
         <motion.div
@@ -63,7 +63,7 @@ export default function Skills() {
       {/* React */}
       <div className="flex w-full flex-col gap-2">
         <div className="flex justify-between">
-          <p>React</p>
+          <p>Adobe Muse</p>
           <p>97%</p>
         </div>
         <motion.div
@@ -80,11 +80,10 @@ export default function Skills() {
         </motion.div>
       </div>
 
-      {/* Next.js */}
       <div className="flex w-full flex-col gap-2">
         <div className="flex justify-between">
-          <p>Next.js</p>
-          <p>95%</p>
+          <p>Illustrator</p>
+          <p>87%</p>
         </div>
         <motion.div
           initial="offscreen"
@@ -94,8 +93,8 @@ export default function Skills() {
         >
           <motion.div
             variants={lineVariants}
-            className="h-2 w-[95%] rounded-full bg-gradient-to-r from-gray-800 to-black"
-            title="95%"
+            className="h-2 w-[87%] rounded-full bg-gradient-to-r from-red-500 to-orange-600"
+            title="87%"
           ></motion.div>
         </motion.div>
       </div>
@@ -103,7 +102,7 @@ export default function Skills() {
       {/* MongoDB */}
       <div className="flex w-full flex-col gap-2">
         <div className="flex justify-between">
-          <p>MongoDB</p>
+          <p>Photoshop</p>
           <p>90%</p>
         </div>
         <motion.div
@@ -123,7 +122,7 @@ export default function Skills() {
       {/* TypeScript */}
       <div className="flex w-full flex-col gap-2">
         <div className="flex justify-between">
-          <p>TypeScript</p>
+          <p>Video Editing</p>
           <p>90%</p>
         </div>
         <motion.div
@@ -142,7 +141,7 @@ export default function Skills() {
       {/* Express */}
       <div className="flex w-full flex-col gap-2">
         <div className="flex justify-between">
-          <p>Express</p>
+          <p>Communication</p>
           <p>90%</p>
         </div>
         <motion.div
@@ -155,46 +154,6 @@ export default function Skills() {
             variants={lineVariants}
             className="h-2 w-[90%] rounded-full bg-gradient-to-r from-green-500 to-lime-600"
             title="90%"
-          ></motion.div>
-        </motion.div>
-      </div>
-
-      {/* Git */}
-      <div className="flex w-full flex-col gap-2">
-        <div className="flex justify-between">
-          <p>Git</p>
-          <p>87%</p>
-        </div>
-        <motion.div
-          initial="offscreen"
-          whileInView="onscreen"
-          viewport={{ once: true, amount: 0.8 }}
-          className="h-2 w-full overflow-hidden rounded-full bg-gradient-to-t from-black to-gray-700"
-        >
-          <motion.div
-            variants={lineVariants}
-            className="h-2 w-[87%] rounded-full bg-gradient-to-r from-red-500 to-orange-600"
-            title="87%"
-          ></motion.div>
-        </motion.div>
-      </div>
-
-      {/* Gatsby */}
-      <div className="flex w-full flex-col gap-2">
-        <div className="flex justify-between">
-          <p>Gatsby</p>
-          <p>85%</p>
-        </div>
-        <motion.div
-          initial="offscreen"
-          whileInView="onscreen"
-          viewport={{ once: true, amount: 0.8 }}
-          className="h-2 w-full overflow-hidden rounded-full bg-gradient-to-t from-black to-gray-700"
-        >
-          <motion.div
-            variants={lineVariants}
-            className="h-2 w-[85%] rounded-full bg-gradient-to-r from-purple-600 to-pink-600"
-            title="85%"
           ></motion.div>
         </motion.div>
       </div>
