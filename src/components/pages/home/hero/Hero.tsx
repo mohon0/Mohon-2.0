@@ -85,7 +85,7 @@ export default function Hero() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.8, delay: 1.2 }}
-                  className="mt-12 space-y-3 md:mt-16 md:space-y-5"
+                  className="mt-5 space-y-3 md:space-y-5"
                 >
                   <p className="text-muted-foreground">Connect With Me</p>
                   <div className="flex gap-5 md:gap-10">

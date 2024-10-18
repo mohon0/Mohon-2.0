@@ -62,11 +62,15 @@ const sliderData = [
 
 export function Slider() {
   return (
-    <div className="mx-16 my-20">
+    <div className="my-20 md:mx-16">
+      <p className="mb-10 text-center text-4xl font-bold md:text-5xl">
+        Many Assets Ready To Go
+      </p>
       <Carousel
         opts={{
           align: "start",
         }}
+        className="mx-16"
       >
         <CarouselContent>
           {sliderData.map((slider) => (

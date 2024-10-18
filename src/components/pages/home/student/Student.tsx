@@ -14,6 +14,7 @@ import img5 from "@/images/slider/img5.jpeg";
 import img6 from "@/images/slider/img6.jpeg";
 import img7 from "@/images/slider/img7.jpeg";
 import Image from "next/image";
+import QuickMenu from "./QuickMenu";
 
 const sliderData = [
   {
@@ -62,25 +63,37 @@ const sliderData = [
 
 export function Student() {
   return (
-    <div className="mx-16 my-20">
-      <p className="mb-8 text-center text-4xl font-bold md:text-6xl">
-        My Student
-      </p>
-      <Carousel
-        opts={{
-          align: "start",
-        }}
-      >
-        <CarouselContent>
-          {sliderData.map((slider) => (
-            <CarouselItem key={slider.id} className="md:basis-1/2 lg:basis-1/5">
-              <Image src={slider.img} alt="" className="h-40 object-cover" />
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
-      </Carousel>
+    <div className="mx-4 my-20 md:mx-16">
+      <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:gap-20">
+        <div className="order-2">
+          <QuickMenu />
+        </div>
+        <div className="mx-10">
+          <p className="mb-8 text-center text-4xl font-bold">My Student</p>
+          <Carousel
+            opts={{
+              align: "start",
+            }}
+          >
+            <CarouselContent>
+              {sliderData.map((slider) => (
+                <CarouselItem
+                  key={slider.id}
+                  className="md:basis-1/2 lg:basis-1/3"
+                >
+                  <Image
+                    src={slider.img}
+                    alt=""
+                    className="h-40 object-cover"
+                  />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
+        </div>
+      </div>
     </div>
   );
 }
