@@ -14,7 +14,7 @@ export default function Contact() {
       </header>
 
       <div className="mt-10 grid grid-cols-1 gap-10 md:grid-cols-12">
-        <article className="col-span-1 rounded-lg bg-light-gradient p-4 shadow-custom-light dark:bg-dark-gradient dark:shadow-custom-dark md:col-span-5 md:p-6">
+        <article className="white-bg dark:dark-bg col-span-1 rounded-lg p-4 md:col-span-5 md:p-6">
           <Image
             src={img}
             alt="Sejar Parvez"
@@ -61,7 +61,7 @@ export default function Contact() {
                   href={href}
                   aria-label={label}
                   target="_blank"
-                  className="flex h-12 w-12 items-center justify-center rounded bg-light-gradient text-xl shadow-custom-light transition-all duration-300 hover:border hover:border-primary hover:text-primary dark:bg-dark-gradient dark:shadow-custom-dark md:h-16 md:w-16"
+                  className="white-bg dark:dark-bg flex h-12 w-12 items-center justify-center rounded text-xl transition-all duration-300 hover:border hover:border-primary hover:text-primary md:h-16 md:w-16"
                 >
                   {icon}
                 </Link>
@@ -70,7 +70,7 @@ export default function Contact() {
           </section>
         </article>
 
-        <form className="col-span-1 flex flex-col rounded-lg bg-light-gradient p-4 shadow-custom-light dark:bg-dark-gradient dark:shadow-custom-dark md:col-span-7 md:p-6">
+        <form className="white-bg dark:dark-bg col-span-1 flex flex-col rounded-lg p-4 md:col-span-7 md:p-6">
           {[
             { label: "Your Name", type: "text", id: "name" },
             { label: "Phone Number", type: "text", id: "phone" },

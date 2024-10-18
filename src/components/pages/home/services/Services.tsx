@@ -60,7 +60,7 @@ const FeatureModel = ({ data }: { data: Props }) => {
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
       <motion.div
-        className="flex h-full flex-col rounded-md bg-light-gradient p-5 shadow-custom-light transition-all duration-300 dark:bg-dark-gradient dark:shadow-custom-dark md:p-12"
+        className="white-bg dark:dark-bg flex h-full flex-col rounded-md p-5 transition-all duration-300 md:p-12"
         whileHover="hover"
         initial="rest"
         animate="rest"

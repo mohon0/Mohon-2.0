@@ -13,22 +13,11 @@ const config: Config = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-
-        "light-gradient":
-          "rgba(0, 0, 0, 0) linear-gradient(145deg, rgb(226, 232, 236), rgb(255, 255, 255))",
-        "dark-gradient":
-          "linear-gradient(145deg, rgb(30, 32, 36), rgb(35, 39, 43))",
       },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
-      },
-      boxShadow: {
-        "custom-light":
-          "rgb(209, 217, 230) 5px 5px 15px 0px, rgb(255, 255, 255) -5px -5px 15px 0px",
-        "custom-dark":
-          "rgb(28, 30, 34) 10px 10px 19px 0px, rgb(38, 42, 46) -10px -10px 19px 0px",
       },
 
       colors: {

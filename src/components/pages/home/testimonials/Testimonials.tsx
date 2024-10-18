@@ -15,7 +15,7 @@ export default function Testimonials() {
   const swiperRef = useRef<any>(null);
 
   return (
-    <div className="mx-3 my-28 md:mx-10 lg:mx-auto lg:max-w-7xl">
+    <div className="mx-3 my-16 md:mx-10 lg:mx-auto lg:max-w-7xl">
       <div className="text-center">
         <p className="text-4xl font-bold lg:text-6xl">Testimonials</p>
       </div>

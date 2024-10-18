@@ -92,7 +92,7 @@ export default function Hero() {
                         key={href}
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
-                        className="flex h-12 w-12 items-center justify-center rounded bg-light-gradient text-muted-foreground shadow-custom-light hover:text-primary dark:bg-dark-gradient dark:shadow-custom-dark md:h-16 md:w-16"
+                        className="white-bg dark:dark-bg flex h-12 w-12 items-center justify-center rounded text-muted-foreground hover:text-primary md:h-16 md:w-16"
                       >
                         <Link
                           href={href}
@@ -117,7 +117,7 @@ export default function Hero() {
                 className="relative order-1 flex justify-center md:order-2 md:mt-0"
               >
                 <motion.div
-                  className="absolute bottom-0 z-0 h-64 w-64 bg-light-gradient shadow-custom-light dark:bg-dark-gradient dark:shadow-custom-dark md:h-[27rem] md:w-[26rem]"
+                  className="white-bg dark:dark-bg absolute bottom-0 z-0 h-64 w-64 md:h-[27rem] md:w-[26rem]"
                   initial={{ opacity: 0, y: 50 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 1 }}
