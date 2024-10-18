@@ -1,68 +1,47 @@
-"use client";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import Image from "next/image";
-import "swiper/css";
-import "swiper/css/pagination";
-import { Autoplay, FreeMode, Pagination } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
-
 import { TeamData } from "./TeamDate";
 
 export default function Team() {
   return (
-    <div className="mt-20">
-      <p className="text-center text-4xl font-bold md:text-6xl">My Team</p>
-
-      <div className="w-full px-3 md:px-0">
-        <Swiper
-          modules={[Autoplay, FreeMode, Pagination]}
-          grabCursor={true}
-          autoplay={true}
-          breakpoints={{
-            480: {
-              slidesPerView: 1,
-              spaceBetween: 60,
-            },
-            640: {
-              slidesPerView: 2,
-              spaceBetween: 60,
-            },
-            768: {
-              slidesPerView: 2.8,
-              spaceBetween: 40,
-            },
-            1024: {
-              slidesPerView: 4,
-              spaceBetween: 10,
-            },
-          }}
-          centerInsufficientSlides={true}
-          freeMode={true}
-          pagination={{
-            dynamicBullets: true,
-          }}
-          className="my-10 flex h-full"
-        >
-          {TeamData.map((data) => (
-            <SwiperSlide
-              key={data.id}
-              className="white-bg dark:dark-bg m-10 w-96 items-center justify-center rounded-2xl p-5"
-            >
-              <Image
-                src={data.img}
-                alt=""
-                className="mx-auto h-40 w-40 rounded-full object-cover"
-              />
-
-              <div className="my-5 flex flex-col items-center justify-center gap-2">
-                <div className="text-center text-2xl font-bold text-primary">
-                  {data.name}
+    <div className="mx-16 my-20">
+      <p className="mb-10 text-center text-4xl font-bold md:text-6xl">
+        My Team
+      </p>
+      <Carousel
+        opts={{
+          align: "start",
+        }}
+      >
+        <CarouselContent>
+          {TeamData.map((slider) => (
+            <CarouselItem key={slider.id} className="md:basis-1/2 lg:basis-1/5">
+              {/* Fixed height card */}
+              <div className="white-bg dark:dark-bg flex min-h-[17.5rem] flex-col items-center justify-center gap-6 rounded-md px-2 py-5">
+                <Image
+                  src={slider.img}
+                  alt={slider.name}
+                  className="h-32 w-32 rounded-full object-cover"
+                />
+                <div className="space-y-2 text-center">
+                  <p className="text-xl font-bold text-primary">
+                    {slider.name}
+                  </p>
+                  <p className="text-muted-foreground">{slider.post}</p>
                 </div>
-                <div className="text-secondary-foreground">{data.post}</div>
               </div>
-            </SwiperSlide>
+            </CarouselItem>
           ))}
-        </Swiper>
-      </div>
+        </CarouselContent>
+        <CarouselPrevious />
+        <CarouselNext />
+      </Carousel>
     </div>
   );
 }

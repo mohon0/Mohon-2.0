@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef } from "react";
-
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
