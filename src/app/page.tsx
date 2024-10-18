@@ -20,11 +20,11 @@ export default function Home() {
       <ReactLenis root options={lenisOptions}>
         <Hero />
         <Notice />
-        <Slider />
         <Student />
+        <Slider />
+        <ImageSlider />
         <Team />
         <Contact />
-        <ImageSlider />
         <Footer />
       </ReactLenis>
     </>

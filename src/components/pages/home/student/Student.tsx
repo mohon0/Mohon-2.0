@@ -73,14 +73,8 @@ export function Student() {
       >
         <CarouselContent>
           {sliderData.map((slider) => (
-            <CarouselItem
-              key={slider.id}
-              className="relative md:basis-1/2 lg:basis-1/5"
-            >
+            <CarouselItem key={slider.id} className="md:basis-1/2 lg:basis-1/5">
               <Image src={slider.img} alt="" className="h-40 object-cover" />
-              <p className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform text-xl font-bold text-white">
-                {slider.name}
-              </p>
             </CarouselItem>
           ))}
         </CarouselContent>

@@ -6,9 +6,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation"; // Import usePathname
 import { useEffect, useState } from "react";
-import { FaXTwitter } from "react-icons/fa6";
-import { LuFacebook, LuGithub } from "react-icons/lu";
+import { FaUpwork } from "react-icons/fa6";
+import { LuFacebook, LuInstagram } from "react-icons/lu";
+import { SiFreelancer } from "react-icons/si";
 import { SlSocialLinkedin } from "react-icons/sl";
+import { TbBrandFiverr } from "react-icons/tb";
 import AnimatedText from "./AnimatedText";
 
 export default function Hero() {
@@ -114,7 +116,7 @@ export default function Hero() {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, delay: 0.5, ease: "easeInOut" }}
-                className="relative order-1 flex justify-center md:order-2 md:mt-0"
+                className="relative order-1 flex justify-end md:order-2 md:mt-0"
               >
                 <motion.div
                   className="white-bg dark:dark-bg absolute bottom-0 z-0 h-64 w-64 md:h-[27rem] md:w-[26rem]"
@@ -145,18 +147,29 @@ const socialLinks = [
     icon: <LuFacebook />,
   },
   {
-    href: "https://www.twitter.com/sejarparvez",
-    label: "Twitter",
-    icon: <FaXTwitter />,
+    href: "https://instagram.com/sejarparvez",
+    label: "Instagram",
+    icon: <LuInstagram />,
   },
+
   {
     href: "https://linkedin.com/in/sejarparvez",
     label: "LinkedIn",
     icon: <SlSocialLinkedin />,
   },
   {
-    href: "https://www.github.com/sejarparvez",
-    label: "GitHub",
-    icon: <LuGithub />,
+    href: "https://linkedin.com/in/sejarparvez",
+    label: "Fiverr",
+    icon: <TbBrandFiverr />,
+  },
+  {
+    href: "https://linkedin.com/in/sejarparvez",
+    label: "Upwork",
+    icon: <FaUpwork />,
+  },
+  {
+    href: "https://linkedin.com/in/sejarparvez",
+    label: "Freelancer",
+    icon: <SiFreelancer />,
   },
 ];
