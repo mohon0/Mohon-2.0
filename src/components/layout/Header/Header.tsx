@@ -2,9 +2,8 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { FaSquareFacebook, FaSquareXTwitter } from "react-icons/fa6";
+import DesktopMenu from "./DesktopMenu";
 import MobileMenu from "./MobileMenu";
-import { ModeToggle } from "./ModeToggle";
 
 export default function Header() {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
@@ -38,67 +37,23 @@ export default function Header() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden items-center gap-8 text-sm font-medium text-muted-foreground lg:flex">
-          <Link href="/about" className="transition-colors hover:text-primary">
-            About Me
-          </Link>
-          <Link href="/" className="transition-colors hover:text-primary">
-            Design
-          </Link>
-          <Link href="/" className="transition-colors hover:text-primary">
-            Blood Bank
-          </Link>
-          <Link href="/" className="transition-colors hover:text-primary">
-            Best Computer T.C.
-          </Link>
-          <Link href="/" className="transition-colors hover:text-primary">
-            Login
-          </Link>
-        </nav>
+
+        <DesktopMenu />
 
         {/* Mobile Menu Icon for Smaller Screens */}
         <div className="lg:hidden">
-          <ModeToggle />
           <MobileMenu /> {/* Render the MobileMenu component here */}
         </div>
 
         {/* Call to Action & Social Media for Desktop */}
-        <div className="hidden items-center gap-8 lg:flex">
+        <div className="hidden items-center gap-2 lg:flex">
           {/* Call to Action Button */}
           <Link href="/">
-            <Button className="h-full px-6 py-1.5 text-sm font-semibold">
-              Apply Now
-            </Button>
+            <Button variant="link">Pricing</Button>
           </Link>
-
-          {/* Social Icons & Mode Toggle */}
-          <div className="flex items-center gap-4">
-            <Link
-              href="https://facebook.com"
-              aria-label="Facebook"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2"
-            >
-              <FaSquareFacebook
-                size={20}
-                className="transition-colors hover:text-primary"
-              />
-            </Link>
-            <Link
-              href="https://twitter.com"
-              aria-label="Twitter"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2"
-            >
-              <FaSquareXTwitter
-                size={20}
-                className="transition-colors hover:text-primary"
-              />
-            </Link>
-            <ModeToggle />
-          </div>
+          <Link href="/">
+            <Button variant="outline">Sign In</Button>
+          </Link>
         </div>
       </div>
     </header>

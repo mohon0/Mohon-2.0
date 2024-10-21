@@ -1,4 +1,5 @@
-import { ThemeProvider } from "@/components/provider/theme-provider";
+import Header from "@/components/layout/Header/Header";
+import Footer from "@/components/layout/footer/Footer";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -18,14 +19,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="light"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
+        <Header />
+        <div className="mt-20">{children}</div>
+        <Footer />
       </body>
     </html>
   );

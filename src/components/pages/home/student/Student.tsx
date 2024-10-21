@@ -73,6 +73,7 @@ export function Student() {
           <Carousel
             opts={{
               align: "start",
+              loop: true,
             }}
           >
             <CarouselContent>

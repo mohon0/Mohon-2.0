@@ -47,7 +47,7 @@ export default function MobileMenu() {
             Best Computer T.C.
           </Link>
           <Link
-            href="/"
+            href="/login"
             className="transition-colors hover:text-primary"
             onClick={() => setOpen(false)}
           >
@@ -58,30 +58,7 @@ export default function MobileMenu() {
         {/* Mode Toggle and Social Icons */}
         <div className="mt-10 flex items-center justify-between">
           {/* Social Icons */}
-          <div className="flex gap-4">
-            <Link
-              href="https://facebook.com"
-              aria-label="Facebook"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaSquareFacebook
-                size={20}
-                className="transition-colors hover:text-primary"
-              />
-            </Link>
-            <Link
-              href="https://twitter.com"
-              aria-label="Twitter"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaSquareXTwitter
-                size={20}
-                className="transition-colors hover:text-primary"
-              />
-            </Link>
-          </div>
+          
         </div>
       </SheetContent>
     </Sheet>

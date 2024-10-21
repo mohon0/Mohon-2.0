@@ -50,33 +50,6 @@
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
   }
-
-  .dark {
-    --background: 214.29, 9.59%, 14.31%;
-    --foreground: 210 20% 98%;
-    --card: 224 71.4% 4.1%;
-    --card-foreground: 210 20% 98%;
-    --popover: 224 71.4% 4.1%;
-    --popover-foreground: 210 20% 98%;
-    --primary: 263.4 70% 50.4%;
-    --primary-foreground: 210 20% 98%;
-    --secondary: 215 27.9% 16.9%;
-    --secondary-foreground: 210 20% 98%;
-    --muted: 215 27.9% 16.9%;
-    --muted-foreground: 217.9 10.6% 64.9%;
-    --accent: 215 27.9% 16.9%;
-    --accent-foreground: 210 20% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 20% 98%;
-    --border: 215 27.9% 16.9%;
-    --input: 215 27.9% 16.9%;
-    --ring: 263.4 70% 50.4%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
-  }
 }
 
 @layer base {
@@ -96,14 +69,5 @@
     box-shadow:
       rgb(209, 217, 230) 5px 5px 15px 0px,
       rgb(255, 255, 255) -5px -5px 15px 0px;
-  }
-
-  .dark-bg {
-    background: rgba(0, 0, 0, 0)
-      linear-gradient(145deg, rgb(30, 32, 36), rgb(35, 39, 43)) repeat scroll 0%
-      0% / auto padding-box border-box;
-    box-shadow:
-      rgb(28, 30, 34) 10px 10px 19px 0px,
-      rgb(38, 42, 46) -10px -10px 19px 0px;
   }
 }

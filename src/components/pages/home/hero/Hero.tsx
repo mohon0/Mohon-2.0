@@ -1,5 +1,4 @@
 "use client";
-import Header from "@/components/layout/Header/Header";
 import img from "@/images/logo1.png";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -41,7 +40,6 @@ export default function Hero() {
       )}
       {!isLoading && (
         <>
-          <Header />
           <div className="mx-auto mb-10 mt-12 md:mb-16 md:mt-20">
             <section className="grid grid-cols-1 items-center gap-10 px-4 py-4 md:px-10 lg:grid-cols-2">
               {/* Text Section */}
