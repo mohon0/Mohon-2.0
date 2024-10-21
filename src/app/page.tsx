@@ -1,3 +1,4 @@
+import Header from "@/components/layout/Header/Header";
 import Contact from "@/components/pages/home/contact/Contact";
 import Hero from "@/components/pages/home/hero/Hero";
 import ImageSlider from "@/components/pages/home/image-slider/ImageSlider";
@@ -16,6 +17,7 @@ export default function Home() {
   return (
     <>
       <ReactLenis root options={lenisOptions}>
+        <Header fixed />
         <Hero />
         <Student />
         <Slider />

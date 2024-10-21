@@ -1,7 +1,5 @@
 "use client";
 
-import * as React from "react";
-
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -11,6 +9,8 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
+import * as React from "react";
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -50,18 +50,25 @@ const components: { title: string; href: string; description: string }[] = [
   },
 ];
 
-export default function DesktopMenu() {
+export default function DesktopMenu({ fixed = false }: { fixed?: boolean }) {
   return (
     <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Tools</NavigationMenuTrigger>
+          <NavigationMenuTrigger
+            className={fixed ? "text-white" : "text-black"}
+          >
+            Tools
+          </NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
               <li className="row-span-3">
                 <NavigationMenuLink asChild>
                   <a
-                    className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
+                    className={cn(
+                      "flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md",
+                      fixed ? "text-white" : "text-black",
+                    )}
                     href="/"
                   >
                     <div className="mb-2 mt-4 text-lg font-medium">
@@ -87,8 +94,35 @@ export default function DesktopMenu() {
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
+
+        {/* Other Menu Items */}
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Image</NavigationMenuTrigger>
+          <NavigationMenuTrigger
+            className={fixed ? "text-white" : "text-black"}
+          >
+            Image
+          </NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+              {components.map((component) => (
+                <ListItem
+                  key={component.title}
+                  title={component.title}
+                  href={component.href}
+                >
+                  {component.description}
+                </ListItem>
+              ))}
+            </ul>
+          </NavigationMenuContent>
+        </NavigationMenuItem>
+
+        <NavigationMenuItem>
+          <NavigationMenuTrigger
+            className={fixed ? "text-white" : "text-black"}
+          >
+            Icons
+          </NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
               {components.map((component) => (
@@ -104,7 +138,11 @@ export default function DesktopMenu() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Icons</NavigationMenuTrigger>
+          <NavigationMenuTrigger
+            className={fixed ? "text-white" : "text-black"}
+          >
+            Video
+          </NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
               {components.map((component) => (
@@ -120,7 +158,11 @@ export default function DesktopMenu() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Video</NavigationMenuTrigger>
+          <NavigationMenuTrigger
+            className={fixed ? "text-white" : "text-black"}
+          >
+            Template
+          </NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
               {components.map((component) => (
@@ -136,7 +178,11 @@ export default function DesktopMenu() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Template</NavigationMenuTrigger>
+          <NavigationMenuTrigger
+            className={fixed ? "text-white" : "text-black"}
+          >
+            PSD
+          </NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
               {components.map((component) => (
@@ -152,7 +198,11 @@ export default function DesktopMenu() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>PSD</NavigationMenuTrigger>
+          <NavigationMenuTrigger
+            className={fixed ? "text-white" : "text-black"}
+          >
+            Mockups
+          </NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
               {components.map((component) => (
@@ -168,7 +218,11 @@ export default function DesktopMenu() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Mockups</NavigationMenuTrigger>
+          <NavigationMenuTrigger
+            className={fixed ? "text-white" : "text-black"}
+          >
+            More
+          </NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
               {components.map((component) => (
@@ -184,20 +238,22 @@ export default function DesktopMenu() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>More</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-              {components.map((component) => (
-                <ListItem
-                  key={component.title}
-                  title={component.title}
-                  href={component.href}
-                >
-                  {component.description}
-                </ListItem>
-              ))}
-            </ul>
-          </NavigationMenuContent>
+          <Link href="/docs" legacyBehavior passHref>
+            <NavigationMenuLink
+              className={fixed ? "pr-1 text-white" : "pr-1 text-black"}
+            >
+              Job
+            </NavigationMenuLink>
+          </Link>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <Link href="/docs" legacyBehavior passHref>
+            <NavigationMenuLink
+              className={fixed ? "pl-2 text-white" : "pl-2 text-black"}
+            >
+              Hire Freelancer
+            </NavigationMenuLink>
+          </Link>
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>

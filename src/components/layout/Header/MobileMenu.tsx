@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import Link from "next/link";
 import { useState } from "react";
-import { FaSquareFacebook, FaSquareXTwitter } from "react-icons/fa6";
 import { HiBars3BottomRight } from "react-icons/hi2";
 
 export default function MobileMenu() {
@@ -12,7 +11,7 @@ export default function MobileMenu() {
   return (
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger asChild>
-        <Button variant="ghost" className="p-2">
+        <Button variant="ghost" className="p-2 text-white">
           <HiBars3BottomRight size={24} />
         </Button>
       </SheetTrigger>
@@ -58,7 +57,6 @@ export default function MobileMenu() {
         {/* Mode Toggle and Social Icons */}
         <div className="mt-10 flex items-center justify-between">
           {/* Social Icons */}
-          
         </div>
       </SheetContent>
     </Sheet>

@@ -7,14 +7,29 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import img from "@/images/hero/banner.jpg";
+import { Skeleton } from "@/components/ui/skeleton";
+import img3 from "@/images/hero/2.jpg";
+import img1 from "@/images/hero/banner.jpg";
 import { ChevronDown, Search } from "lucide-react";
-import Image from "next/image";
-import { useState } from "react";
+import Image, { StaticImageData } from "next/image";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
+
+const imageArray: StaticImageData[] = [img1, img3];
 
 export default function Hero() {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchFilter, setSearchFilter] = useState("All");
+  const [backgroundImage, setBackgroundImage] = useState<StaticImageData>(img1);
+  const [isLoading, setIsLoading] = useState(true);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    const randomImage =
+      imageArray[Math.floor(Math.random() * imageArray.length)];
+    setBackgroundImage(randomImage);
+    setIsLoading(false);
+  }, [pathname]);
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -23,10 +38,30 @@ export default function Hero() {
 
   const filters = ["All", "Photos", "Videos", "Vectors", "Icons"];
 
+  if (isLoading) {
+    return (
+      <div className="relative h-[29.5rem]">
+        <Skeleton className="h-full w-full bg-gray-900" />
+        <div className="absolute inset-0 flex flex-col items-center justify-center space-y-6 px-4 md:space-y-8 lg:space-y-10">
+          <div className="w-full max-w-2xl text-center">
+            <Skeleton className="mb-4 h-12 w-full" />
+            <Skeleton className="h-6 w-full" />
+          </div>
+          <Skeleton className="h-12 w-full max-w-xl rounded-full sm:max-w-2xl md:max-w-3xl" />
+          <div className="flex w-full max-w-xl flex-wrap justify-center gap-2">
+            {filters.map((_, index) => (
+              <Skeleton key={index} className="h-10 w-20" />
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="relative">
       <Image
-        src={img}
+        src={backgroundImage}
         alt="Hero banner image showcasing creative designs"
         width={1920}
         height={1080}
